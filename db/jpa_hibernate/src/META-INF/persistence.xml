@@ -12,6 +12,13 @@
 		<class>jpa_hibernate.Campeonato</class>
 		<class>jpa_hibernate.Rodada</class>
 		<class>jpa_hibernate.ClassificacaoRodada</class>
+		<class>jpa_hibernate.Posicao</class>
+		<class>jpa_hibernate.Jogador</class>
+		<class>jpa_hibernate.Jogo</class>
+		<class>jpa_hibernate.Clube</class>
+		<class>jpa_hibernate.ClubeJogador</class>
+		<class>jpa_hibernate.ClubeTecnico</class>
+		<class>jpa_hibernate.Tecnico</class>
 
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
@@ -25,8 +32,8 @@
 				value="jdbc:postgresql://localhost:5432/jpa_hibernate" />
 			<property name="javax.persistence.jdbc.driver"
 				value="org.postgresql.Driver" />
-			<property name="javax.persistence.jdbc.user" value="lucas" />
-			<property name="javax.persistence.jdbc.password" value="123" />
+			<property name="javax.persistence.jdbc.user" value="admin" />
+			<property name="javax.persistence.jdbc.password" value="admin" />
 		</properties>
 	</persistence-unit>
 </persistence>

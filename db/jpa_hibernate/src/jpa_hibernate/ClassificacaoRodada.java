@@ -30,6 +30,10 @@ public class ClassificacaoRodada implements Serializable  {
 	@JoinColumn(name = "campeonato", foreignKey = @ForeignKey(name = "fk_classificacaorodada_campeonato"))
 	private Campeonato campeonato;
 	
+	@ManyToOne(optional = false)
+	@JoinColumn(name = "clube", foreignKey = @ForeignKey(name = "fk_classificacaorodada_clube"))
+	private Clube clube;
+	
 	@Column(nullable = false, length = 2, unique = true)
 	private int posicao;
 	
@@ -53,9 +57,10 @@ public class ClassificacaoRodada implements Serializable  {
 	
 	public ClassificacaoRodada () {}
 	
-	public ClassificacaoRodada (Rodada rodada, Campeonato campeonato, int posicao, int totalPontos, int totalVitorias, int totalEmpates, int totalDerrotas, int totalGolsPro, int totalGolsContra) {
+	public ClassificacaoRodada (Rodada rodada, Campeonato campeonato, Clube clube, int posicao, int totalPontos, int totalVitorias, int totalEmpates, int totalDerrotas, int totalGolsPro, int totalGolsContra) {
 		this.rodada = rodada;
 		this.campeonato = campeonato;
+		this.clube = clube;
 		this.posicao = posicao;
 		this.totalPontos = totalPontos;
 		this.totalVitorias = totalVitorias;
@@ -100,6 +105,15 @@ public class ClassificacaoRodada implements Serializable  {
 	public int getTotalGolsConta () {return this.totalGolsContra;}
 	
 	public void setTotalGolsContra (int totalGolsContra) {this.totalGolsContra = totalGolsContra;}
+
+	@Override
+	public String toString() {
+		return "ClassificacaoRodada [getRodada()=" + getRodada() + ", getCampeonato()="
+				+ getCampeonato() + ", getPosicao()=" + getPosicao() + ", getTotalPontos()=" + getTotalPontos()
+				+ ", getTotalVitorias()=" + getTotalVitorias() + ", getTotalEmpates()=" + getTotalEmpates()
+				+ ", getTotalDerrotas()=" + getTotalDerrotas() + ", getTotalGolsPro()=" + getTotalGolsPro()
+				+ ", getTotalGolsConta()=" + getTotalGolsConta() + "]";
+	}
 
 }
 

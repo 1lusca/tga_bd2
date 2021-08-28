@@ -33,6 +33,9 @@ public class Rodada implements Serializable {
 	@OneToMany(mappedBy = "rodada")
 	private List<ClassificacaoRodada> classificacaorodada;
 	
+	@OneToMany(mappedBy = "rodada")
+	private List<Jogo> jogo;
+	
 	//@Column(nullable = false, length = 2, unique = true)
 	//private int idRodada;
 	
@@ -50,6 +53,7 @@ public class Rodada implements Serializable {
 
 	public Rodada () {
 		classificacaorodada = new ArrayList<>();
+		jogo = new ArrayList<>();
 	}
 	
 	public Rodada (Campeonato campeonato, int totalJogos, int totalAmarelos, int totalVermelhos, int totalGols) {
