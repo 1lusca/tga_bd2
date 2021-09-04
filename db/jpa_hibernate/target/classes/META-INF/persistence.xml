@@ -29,7 +29,7 @@
 				value="org.hibernate.dialect.PostgreSQL94Dialect" />
 
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:postgresql://localhost:5432/jpa_hibernate" />
+				value="jdbc:postgresql://localhost:5432/bd2" />
 			<property name="javax.persistence.jdbc.driver"
 				value="org.postgresql.Driver" />
 			<property name="javax.persistence.jdbc.user" value="admin" />
